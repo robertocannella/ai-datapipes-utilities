@@ -1,0 +1,19 @@
+{
+  "name": "ai-datapipes-utilities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "process.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertocannella/ai-datapipes-utilities.git"
+  },
+  "author": "Roberto Cannella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertocannella/ai-datapipes-utilities/issues"
+  },
+  "homepage": "https://github.com/robertocannella/ai-datapipes-utilities#readme"
+}
