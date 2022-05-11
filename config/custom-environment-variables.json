@@ -1,0 +1,22 @@
+{
+    "mail": {
+        "password": "ai_datapipes_utility_app_password"
+    },
+    "db": {
+        "dbUser": "db_user",
+        "dbPass": "db_pass",
+        "dbHost": "db_host",
+        "dbPort": "db_port",
+        "dbName": "db_name"
+    },
+    "jwtPrivateKey": "app_jwtPrivateKey",
+    "firebaseConfig": {
+        "apiKey": "ai_datapipes_utility_app_firestore_apiKey",
+        "authDomain": "ai_datapipes_utility_app_firestore_authDomain",
+        "projectId": "ai_datapipes_utility_app_firestore_projectId",
+        "storageBucket": "ai_datapipes_utility_app_firestore_storageBucket",
+        "messagingSenderId": "ai_datapipes_utility_app_firestore_messagingSenderId",
+        "appId": "ai_datapipes_utility_app_firestore_appId",
+        "measurementId": "ai_datapipes_utility_app_firestore_measurementId"
+    }
+}

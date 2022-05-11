@@ -1,7 +1,8 @@
 {
+  "type": "module",
   "name": "ai-datapipes-utilities",
   "version": "1.0.0",
-  "description": "",
+  "description": "backend utility software for A.I. Datapipes",
   "main": "process.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/robertocannella/ai-datapipes-utilities/issues"
   },
-  "homepage": "https://github.com/robertocannella/ai-datapipes-utilities#readme"
+  "homepage": "https://github.com/robertocannella/ai-datapipes-utilities#readme",
+  "dependencies": {
+    "config": "^3.3.7",
+    "firebase": "^9.8.1"
+  }
 }

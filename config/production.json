@@ -1,0 +1,6 @@
+{
+    "name": "A.I. Datapipes Utility Package - Production",
+    "mail": {
+        "host": "production-mail-server"
+    }
+}
