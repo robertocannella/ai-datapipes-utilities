@@ -19,6 +19,7 @@
   "homepage": "https://github.com/robertocannella/ai-datapipes-utilities#readme",
   "dependencies": {
     "config": "^3.3.7",
-    "firebase": "^9.8.1"
+    "firebase": "^9.8.1",
+    "mongoose": "^6.3.3"
   }
 }
