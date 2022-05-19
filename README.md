@@ -30,13 +30,16 @@ db.systems.aggregate( { $project: { _id : 0, timestamp: {$slice: ["$zone12.lineR
 
 
  * Filters contents of a nested array:
+
 ```
+use datapipes
+
 db.systems.aggregate([
      {
-     $project: {
-     _id: 0,
-     numTimeStamps: { $filter: { input: '$zone10.lineRT', as: 'ts', cond: { $gt : ['$$ts.timeStamp', 1652213407876.097] }}}
-     }
+        $project: {
+            _id: 0,
+            numTimeStamps: { $filter: { input: '$zone10.lineRT', as: 'ts', cond: { $gt : ['$$ts.timeStamp', 1652213407876.097] }}}
+        }
     }
-  ])
+])
 ```
