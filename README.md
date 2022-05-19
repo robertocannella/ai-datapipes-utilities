@@ -16,16 +16,22 @@ npm install mongoose
 * Slices the objects within the 'zone12.lineRT' array and returns the sliced amount only
 
 ```
+use datapipes
+
 db.systems.aggregate( { $project: { _id : 0, timestamp: {$slice: ["$zone12.lineRT",2,2]}}})
 ```
 
  * Returns a count of total temperature readings inside the array
  ```
- datapipes> db.systems.aggregate( { $project: { _id : 0, numTimeStamps: {$size : "$zone11.lineRT"}}})
+ use datapipes
+
+ db.systems.aggregate( { $project: { _id : 0, numTimeStamps: {$size : "$zone11.lineRT"}}})
  ```
 
+
+ * Filters contents of a nested array:
 ```
-  datapipes> db.systems.aggregate([
+db.systems.aggregate([
      {
      $project: {
      _id: 0,
@@ -33,4 +39,4 @@ db.systems.aggregate( { $project: { _id : 0, timestamp: {$slice: ["$zone12.lineR
      }
     }
   ])
-``
+```
