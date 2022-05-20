@@ -43,3 +43,25 @@ db.systems.aggregate([
     }
 ])
 ```
+ * Filters contents of a nested array, ***then sort***
+```
+
+db.systems.aggregate([
+    {
+        $project:
+        {
+            _id: 0, numTimeStamps:
+            {
+                $filter: { input: '$zone10.lineRT', as: 'ts', cond: { $gt: ['$$ts.timeStamp', 1652224804809.8372] } }
+            }
+        }
+    },
+    {
+        $unwind: "$numTimeStamps"
+    },
+    { $sort: { 'numTimeStamps.timeStamp': 1 } },
+    {
+        $group: { _id: "_id", allTimes: { $push: "$numTimeStamps" } }
+    }
+])
+```
