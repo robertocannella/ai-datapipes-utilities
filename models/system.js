@@ -13,9 +13,9 @@ export const System = mongoose.model('System', new mongoose.Schema(
             description: { type: String },
             equipmentId: { type: String }
         },
-        zone10: { lineRT: [] },
-        zone11: { lineRT: [] },
-        zone12: { lineRT: [] }
+        zone10: { lineRT: [], lineST: [] },
+        zone11: { lineRT: [], lineST: [] },
+        zone12: { lineRT: [], lineST: [] }
 
     })
 );

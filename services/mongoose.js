@@ -10,20 +10,35 @@ export const DATABASENAME = 'datapipes';
 var connection;
 // Connect to mongodb
 function db() {
-    let url = `mongodb://${DATABASEHOST}:${DATABASEPORT}/${DATABASENAME}`;
+    let url = `mongodb://192.168.1.179:${DATABASEPORT}/${DATABASENAME}?replicaSet=rs0`;
+    const cleanup = (event) => { // SIGINT is sent for example when you Ctrl+C a running process from the command line.
+        console.log(event)
+        mongoose.connection.close(); // Close MongodDB Connection when Process ends
+        process.exit(); // Exit with default success-code '0'.
+    }
 
-    connection = mongoose.connect(url, {
+    const connection = mongoose.connect(url, {
         serverSelectionTimeoutMS: 5000,
         //useNewUrlParser: true,
         useUnifiedTopology: false,
-        //directConnection: true,
+        directConnection: true,
         authSource: "admin",
         user: DATABASEUSERNAME,
         pass: DATABASEPASSWORD
-    }).then(() => {
+        //socketTimeoutMS: 10000
+    }).then((event) => {
+        //console.log(event);
         console.log('mongo connected');
-    }).catch(e => { console.log("DB Connection Error: ", e.reason); });
+        process.on('SIGINT', cleanup);
+        process.on('SIGTERM', cleanup);
+        // setTimeout(async () => {
+        //     await mongoose.disconnect()
+        //     process.exit();
+        // }, 5000)
+    }).catch(e => { console.log("\n ************   DB Connection Error: ************\n", e.reason); });
 }
+
+
 
 export { db, connection }
 
